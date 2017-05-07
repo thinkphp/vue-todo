@@ -28,7 +28,7 @@
 
       <br/>
 
-      <textarea class="form-control" rows="3" placeholder="Details" v-model="messageDetails" v-on:keyup.enter="addTask"></textarea>
+      <textarea class="form-control" rows="3" placeholder="Description" v-model="messageDetails" v-on:keyup.enter="addTask"></textarea>
 
       <br/>
 
@@ -44,9 +44,9 @@
 
      <div id="thelist">
 
-           <h1 class="animated fadeInUp">...</h1>
+           <h1 class="animated fadeInUp">VueToDo</h1>
 
-           <div class="card card-block animated fadeInUp" v-for="todo in todos" v-bind:id="'card-' + todo.id" >
+           <div class="card card-block animated fadeInUp" style="background-color: yellow;color: #000" v-for="todo in todos" v-bind:id="'card-' + todo.id">
 
                 <button type="button" class="close" aria-label="Close"> <span aria-hidden="true" v-on:click="delTask(todo.id)" >&times;</span> </button>
 
