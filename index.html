@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>To Do List in VueJS</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="css/ripples.min.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="col-md-12" style="height:50px;"></div>
+
+<div class="col-md-5">
+
+   <div id="addTask" class="animated fadeInUp form-group label-static">
+
+      <h1>Add Task</h1>
+
+      <input class="form-control" placeholder="Title" v-on:keyup,enter="addTask" v-model="message">
+
+      <br/>
+
+      <textarea class="form-control" rows="3" placeholder="Details" v-model="messageDetails" v-on:keyup.enter="addTask"></textarea>
+
+      <br/>
+
+      <a v-on:click="addTask" class="btn btn-success btn-raised float-xs-right"><span class="text-white">Add Task</span></a>
+
+   </div> 
+
+   <div class="col-md-12" style="height:20px"></div>
+
+</div>
+
+<div class="col-md-7">
+
+     <div id="thelist">
+
+           <h1 class="animated fadeInUp">...</h1>
+
+           <div class="card card-block animated fadeInUp" v-for="todo in todos" v-bind:id="'card-' + todo.id" >
+
+                <button type="button" class="close" aria-label="Close"> <span aria-hidden="true" v-on:click="delTask(todo.id)" >&times;</span> </button>
+
+                <h4 class="card-title" >{{ todo.text }}</h4>
+
+                <p class="card-text">{{ todo.details }}</p>
+
+            </div>
+
+     </div> 
+
+</div>
+
+</div><!-- end div container -->
+
+<center><div class="animated fadeInUp"><img src="assets/Vue.png"></div></center>
+
+<script src="js/vue.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
